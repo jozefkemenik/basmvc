@@ -1,0 +1,43 @@
+﻿@model BASMVC.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="row">
+    <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+        <div class="panel panel-theme  ">
+            <div class="panel-heading text-center">
+                <h2>Registrácia</h2>
+            </div>
+
+            <div class="panel-body">
+
+    @using (Html.BeginForm())
+                {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+    <div class="form-group">
+        <label>Užívateľ</label>
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Heslo</label>
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Zopakuj Heslo</label>
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+    </div>
+    <div class="text-center">
+        <button class="btn btn-default btn-cta" type="submit">Registruj</button>
+    </div>
+                }
+    </div>
+        </div>
+    </div>
+</div>
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }

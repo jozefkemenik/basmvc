@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "Fees";
+}   
+
+<style>
+ ul
+{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+}
+
+    table.fees tbody tr td
+    {
+    vertical-align: middle;
+
+    }
+</style>
+
+<div class="page-wrapper">
+
+    <header class="page-heading clearfix">
+        <h1 class="heading-title pull-left">Poplatky</h1>
+        <div class="breadcrumbs pull-right">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-label">Práve ste tu:</li>
+                <li><a href="~/Home">Domov</a><i class="fa fa-angle-right"></i></li>
+                <li class="current">Poplatky</li>
+            </ul>
+        </div><!--//breadcrumbs-->
+    </header>
+
+
+    <div class="page-content">
+
+        <div class="page-row box box-border">
+            Výška mesačného poplatku za štúdium /školného/ sa uhrádza polročne.<br>
+            Novoprijatí žiaci z prijímacích skúšok do 1. ročníkov prípadne do vyšších ročníkov platia jednorázový poplatok/ zápisné/ v sume <b>2 €</b>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped text-left fees text-center">
+                <thead class="text-center">
+                    <tr>
+                        <th class="text-center">Typ štúdia</th>
+                        <th class="text-center">Odbor</th>
+                        <th class="text-center">Stupeň</th>
+                        <th class="text-center">Poplatok (školné)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Prípravné štúdium</b></td>
+                        <td>
+                            <ul>
+                            <li>Hudobný</li>
+                            <li>Výtvarný</li>
+                            <li>Tanečný</li>
+                            <li>Literárno-dramatický</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                        <td><b class="badge">13€ / mesiac</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Základné štúdium individuálneho vyučovania</b>
+                        </td>
+                        <td>Hudobný</td>
+                        <td>
+                            <ul>
+                                <li>I. stupeň</li>
+                                <li>II. stupeň</li>
+                            </ul>
+                        </td>
+                        <td><b class="badge">14€ / mesiac</b></td>
+                    </tr>                  
+                    <tr>
+                        <td>
+                            <b>Základné štúdium kolektívneho vyučovania</b>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Výtvarný</li>
+                                <li>Tanečný</li>
+                                <li>Literárno-dramatický</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>I. stupeň</li>
+                                <li>II. stupeň</li>
+                            </ul>
+                        </td>
+                        <td><b class="badge">13€ / mesiac</bclass="badge"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Štúdium pre dospelých</b>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Hudobný</li>
+                                <li>Výtvarný</li>
+                                <li>Tanečný</li>
+                                <li>Literárno-dramatický</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                        <td><b class="badge">17€ / mesiac</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Skrátené štúdium</b>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Výtvarný</li>
+                                <li>Tanečný</li>
+                                <li>Literárno-dramatický</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                        <td><b class="badge">14€ / mesiac</b></td>
+                    </tr>
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

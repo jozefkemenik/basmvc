@@ -1,0 +1,21 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <li class="divider">
+        Ahoj @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })
+    </li>
+    <li class="divider">
+        
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <a href="javascript:document.getElementById('logoutForm').submit()">Odhlásenie</a>
+        }
+    </li>
+}
+else
+{
+
+<li class="divider">@Html.ActionLink("Zaregistruj sa", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li class="divider">@Html.ActionLink("Prihlás sa", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+
+}

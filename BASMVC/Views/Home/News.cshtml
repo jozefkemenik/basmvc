@@ -1,0 +1,92 @@
+﻿@using BAS.Resources;
+@using BASMVC.ViewModel
+@model IndexVM
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "News";
+}
+
+
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">Čo bolo</h1>
+            <div class="breadcrumbs pull-right">
+                <ul class="breadcrumbs-list">
+                    <li class="breadcrumbs-label">Práve ste tu:</li>
+                    <li><a href="/home">Domov</a><i class="fa fa-angle-right"></i></li>
+                    <li class="current">Čo bolo</li>
+                </ul>
+            </div><!--//breadcrumbs-->
+        </header>
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="news-wrapper col-md-8 col-sm-7">
+
+@foreach (IndexVM item in Model.NewVMCollection)
+{
+    <article class="news-item page-row has-divider clearfix row">
+        <figure class="thumb col-md-2 col-sm-3 col-xs-4">
+            <img class="img-responsive" src="@item.FilePath" alt="" />
+        </figure>
+        <div class="details col-md-10 col-sm-9 col-xs-8 text-justify">
+            <h3 class="title"><a href="~/Home/NewDetail?id=@item.Id">@item.Title</a></h3>
+            <p>@{ 
+                var text = "";
+                if (item.Text.Length >= 90)
+                {
+
+                    var txtarray = item.Text.Split(' ');
+
+                    foreach (var word in txtarray)
+                    {
+                        if (text.Length < 90)
+                        {
+                            text += word+ " ";
+                        }
+                    }
+                    text += "...";
+                }
+                else
+                {
+                    text = item.Text;
+                }
+
+    }@text</p>
+            <a class="btn btn-theme read-more" href="~/Home/NewDetail?id=@item.Id">Zisti viac<i class="fa fa-chevron-right"></i></a>
+        </div>
+    </article><!--//news-item-->
+
+
+}
+                </div><!--//news-wrapper-->
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">                  
+                    <section class="widget has-divider">
+                        <h3 class="title">Pripravujeme</h3>
+
+
+                        @foreach (var item in Model.EventVMCollection)
+                        {
+                            <article class="events-item row page-row">
+                                <div class="date-label-wrapper col-md-3 col-sm-4 col-xs-4">
+                                    <p class="date-label">
+                                        <span class="month">@item.IssueDateMonthShortText</span>
+                                        <span class="date-number">@item.IssueDate.Day</span>
+                                    </p>
+                                </div><!--//date-label-wrapper-->
+                                <div class="details col-md-9 col-sm-8 col-xs-8">
+                                    <h5 class="title">@item.Title</h5>
+                                    <p class="time text-muted">@item.IssueDateTimeText</p>
+                                </div><!--//details-->
+                            </article>
+                        }
+                        
+                    </section><!--//widget-->
+                    @*<section class="widget">
+                        <h3 class="title">Flickr Photo Stream</h3>
+                        <ul id="flickr-photos"></ul><!--//flickr-photos-->
+                    </section><!--//widget-->*@
+                </aside>
+            </div><!--//page-row-->
+        </div><!--//page-content-->
+    </div><!--//page-->

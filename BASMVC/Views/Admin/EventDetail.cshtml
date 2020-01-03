@@ -1,0 +1,87 @@
+﻿@using BAS.Repository.Model
+@model Event_t
+
+@{
+
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    ViewBag.Title = "News";
+}
+
+
+<div class="row">
+    <div class="col-md-offset-3 col-md-6 ">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label class="control-label">Názov</label>
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control", placeholder = "Sem napíš názov" })
+            </div>
+            <div class="form-group">
+                <label class="control-label">Text</label>
+                @Html.TextAreaFor(m => m.Text, 10, 1, new { @class = "form-control", placeholder = "Sem napíš text" })
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Miesto</label>
+                @Html.TextBoxFor(m => m.Location, new { @class = "form-control", placeholder = "Sem napíš názov" })
+                @Html.ValidationMessageFor(m => m.Location)
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label">Dátum konania</label>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker3'>
+                            <span class="input-group-addon">Datum</span>
+                            <input type='text' class="form-control" placeholder="Zvoľ dátum" name="IssueDate" value='@Model.IssueDate.ToString("d")' />
+
+                        </div>
+                        @Html.ValidationMessageFor(m => m.IssueDate)
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">Hodina</div>
+                            @Html.DropDownListFor(m => m.IssueDateMetadata.Hour, new SelectList(@Model.IssueDateMetadata.Hours), new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">Minuta</div>
+                            @Html.DropDownListFor(m => m.IssueDateMetadata.Minute, new SelectList(@Model.IssueDateMetadata.Minutes), new { @class = "form-control" })
+
+                            @*@Html.ValidationMessageFor(m => m.IssueDate)*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+               
+                <a class="btn btn-warning" href="~/Admin/Events">Naspat</a>
+                <button class="btn btn-info" type="submit">Odosli</button>
+            </div>
+            @*<button type="button" onclick="console.log($('input[name=IssueDate]').val())" >Odosli</button>*@
+        }
+
+
+    </div>
+    <div class="col-md-offset-3"></div>
+</div>
+
+
+@section Scripts{
+
+    <script type="text/javascript">
+
+        $('#datetimepicker3').datepicker({
+            format: "mm/dd/yyyy"
+        });
+    </script>
+}
+
+
+

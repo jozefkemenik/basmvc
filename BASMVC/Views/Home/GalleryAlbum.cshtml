@@ -1,0 +1,36 @@
+﻿@using BAS.Repository.Model
+@model Album_t
+
+@{
+    ViewBag.Title = "GalleryAlbum";
+}
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">@Model.Name<br></h1>
+            <div class="breadcrumbs pull-right">
+                <ul class="breadcrumbs-list">
+                    <li class="breadcrumbs-label">Práve ste tu:</li>
+                    <li><a href="~/Home">Domov</a><i class="fa fa-angle-right"></i></li>
+                    <li><a href="~/Home/Gallery">Galéria</a><i class="fa fa-angle-right"></i></li>
+                    <li class="current">@Model.Name</li>
+                </ul>
+            </div><!--//breadcrumbs-->
+        </header>
+        <div class="page-content">
+            <div class="row page-row">
+                @Html.Partial("~/Views/Files/_AlbumComponentPartial.cshtml", @Model.File_t)
+         
+            </div><!--//page-row-->
+            @if (ViewBag.ReturnUrl != null)
+            {
+                <a class="btn btn-theme read-more" href="@ViewBag.ReturnUrl">Naspäť<i class="fa fa-chevron-right"></i></a>
+            }
+            else
+            {
+                <a class="btn btn-theme read-more" href="/Home/Gallery">Naspäť<i class="fa fa-chevron-right"></i></a>
+            }
+
+        </div><!--//page-content-->
+    </div><!--//page-->
+
+

@@ -1,0 +1,37 @@
+﻿@using BAS.Repository.Model
+@model File_t
+@{
+    Layout = null;
+}
+
+<div class="thumb-block">
+    <input type="hidden" name="fileid" value="@Model.Id" />
+    <a onclick="$(this).closest('li.thumbnailContainer').remove();BrowseHideUpDownArrow();" style="float:right;">
+        <span class="glyphicon glyphicon-remove  pull-right"></span>
+    </a>
+    <div class="media-left" style="vertical-align:middle;">
+        <a style="margin-left:1px" class="hidden button-up" onclick="moveUp($(this).parents('.thumbnailContainer'))">
+            <span class="glyphicon glyphicon-chevron-up" />
+        </a>
+        <a class="hidden button-down" onclick="moveDown($(this).parents('.thumbnailContainer'))">
+            <span class="glyphicon glyphicon-chevron-down" />
+        </a>
+    </div>
+    <div class="media-left">
+        <a class="thumbnail">
+            <img src='@Model.NewThumPath'>
+        </a>
+    </div>
+    <div class="media-body">
+        <div>
+            @{ var strchecked = Model.IsOnTopAlbum ? "checked='checked'" : ""; }
+            <input type="radio" name="IsOnTopAlbum" @strchecked>
+            @*@Html.RadioButtonFor(m => m.IsOnTopAlbum, Model.IsOnTopAlbum, new { @class = "isontop" })*@
+            @Html.LabelFor(m => Model.IsOnTopAlbum, new { @class = "control-label" })
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="icon-user">TextDescription</i></span>
+            @Html.TextAreaFor(m => Model.Description, new { @class = "form-control description" })
+        </div>
+    </div>
+</div>

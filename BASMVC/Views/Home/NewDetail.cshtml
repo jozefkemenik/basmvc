@@ -1,0 +1,86 @@
+﻿@using BAS.Resources;
+@using BASMVC.ViewModel
+@model IndexVM
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "News";
+}
+
+
+<div class="page-wrapper">
+    <header class="page-heading clearfix">
+        <h1 class="heading-title pull-left">@Model.Title</h1>
+        
+        <div class="breadcrumbs pull-right">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-label">Práve ste tu:</li>
+                <li><a href="/home">Domov</a><i class="fa fa-angle-right"></i></li>
+                <li><a href="/home/news">Čo bolo</a><i class="fa fa-angle-right"></i></li>
+                <li class="current">@Model.Title</li>
+            </ul>
+        </div><!--//breadcrumbs-->
+    </header>
+    <div class="page-content">
+        <div class="row page-row">
+            <div class="news-wrapper col-md-8 col-sm-7">
+                <article class="news-item">
+                    <h6>
+                        <i class="fa fa-calendar-o"></i> @Model.IssueDateText
+                        <i class="fa fa-clock-o"></i> @Model.IssueDateTimeText
+                        <i class="fa fa-map-marker"></i> @Model.Location
+
+                    </h6>
+                    <p class="featured-image">
+                        <img class="img-responsive" src="@Model.FilePath" alt="" />
+                    </p>
+                      <p>
+                        <a class="btn btn-info" href="~/Files/GetAlbumId?albumId=@Model.AlbumId&&ru=/Home/NewDetail?id=@Model.Id">Pozri album <i class="fa fa-chevron-right"></i></a>
+                    </p>
+
+                    <blockquote>
+                        <p class="text-justify">@Model.Text</p>
+                        </blockquote>
+                            <a class="btn btn-theme read-more" href="/Home/News">Naspäť<i class="fa fa-chevron-right"></i></a>
+</article><!--//news-item-->
+            </div><!--//news-wrapper-->
+            <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
+                <section class="widget has-divider">
+                    <h3 class="title">Ostatné správy</h3>
+                     @foreach (var item in Model.NewVMCollection)
+                     {
+                    <article class="news-item row">
+                        <figure class="thumb col-md-2 col-sm-3 col-xs-3">
+                            <img src="@item.FilePath" alt="" />
+                        </figure>
+                        <div class="details col-md-10 col-sm-9 col-xs-9">
+                            <h4 class="title"><a href="~/Home/NewDetail?id=@Model.Id">@item.Title</a></h4>
+                        </div>
+                    </article> 
+                    }
+                </section><!--//widget-->
+                <section class="widget has-divider">
+                    <h3 class="title">Pripravujeme</h3>
+
+                    @foreach (var item in Model.EventVMCollection)
+                    {
+                        <article class="events-item row page-row">
+                            <div class="date-label-wrapper col-md-3 col-sm-4 col-xs-4">
+                                <p class="date-label">
+                                    <span class="month">@item.IssueDateMonthShortText</span>
+                                    <span class="date-number">@item.IssueDate.Day</span>
+                                </p>
+                            </div><!--//date-label-wrapper-->
+                            <div class="details col-md-9 col-sm-8 col-xs-8">
+                                <h5 class="title">@item.Title</h5>
+                                <p class="time text-muted">10:00am - 18:00pm<br>East Campus</p>
+                            </div><!--//details-->
+                        </article>
+                    }
+                </section><!--//widget-->
+            </aside>
+        </div><!--//page-row-->
+    </div><!--//page-content-->
+</div><!--//page--> 
+
+

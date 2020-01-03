@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width" />
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Plugins/flexslider/flexslider.css" rel="stylesheet" />
+    <link href="~/Plugins/pretty-photo/css/prettyPhoto.css" rel="stylesheet" />
+    @*<link href="~/Content/css/styles-red.css" rel="stylesheet" />*@
+    <link href="~/Content/css/styles-red.css" rel="stylesheet" />
+    <link href="~/Addons/bootstrap-datepicker-master/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <style>
+        .username {
+            font-weight: bold;
+        }
+
+        .header .menu-top li {
+            font-size: 13px;
+            color: #777777;
+        }
+        body {
+        background-color:gainsboro;
+        
+        }
+    </style>
+</head>
+
+@{string active0 = "", active1 = "", active2 = "", active3 = "", active4 = "", active5 = "";
+    if (ViewBag.ActiveIndex != null)
+    {
+
+        switch ((int)ViewBag.ActiveIndex)
+        {
+            case 0:
+                active0 = "active";
+                break;
+            case 1:
+                active1 = "active";
+                break;
+            case 2:
+                active2 = "active";
+                break;
+            case 3:
+                active3 = "active";
+                break;
+            case 4:
+                active4 = "active";
+                break;
+            case 5:
+                active5 = "active";
+                break;
+        }
+    }
+}
+
+<body class="home-page">
+    <div class="wrapper">
+        <!-- ******HEADER****** -->
+
+        <header class="header">
+
+            <div class="header-main container">
+                <h1 class="logo col-md-4 col-sm-4">
+                    <a href="index.html"><img id="logo" src="/Content/images/logo.png" alt="Logo"></a>
+                </h1><!--//logo-->
+                <div class="info col-md-8 col-sm-8">
+                    <ul class="menu-top navbar-right hidden-xs">
+                        @Html.Partial("_LoginPartial")
+                        <li><a href="~/Home/">Prejdi na verejnu stránku</a></li>
+                    </ul><!--//menu-top-->
+                    <br />
+
+                </div><!--//info-->
+            </div><!--//header-main-->
+        </header>
+        <!--//header--
+        <!-- ******NAV****** -->
+        <nav class="main-nav" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="@active0 nav-item"><a href="~/Admin">Domov</a></li>
+                        <li class="@active1 nav-item"><a href="~/ADmin/Events">Pripravujeme</a></li>
+                        <li class="@active2 nav-item"><a href="~/Admin/News">Čo bolo</a></li>                       
+                        <li class="@active3 nav-item">
+                            <a href="/Admin/Gallery">Galéria</a>
+                            @*<ul class="dropdown-menu">
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="team.html">Leadership Team</a></li>
+                                    <li><a href="jobs.html">Jobs</a></li>
+                                    <li><a href="job-single.html">Single Job</a></li>
+                                    <li><a href="gallery.html">Gallery (3 columns)</a></li>
+                                    <li><a href="gallery-2.html">Gallery (4 columns)</a></li>
+                                    <li><a href="gallery-3.html">Gallery (2 columns)</a></li>
+                                    <li><a href="gallery-4.html">Gallery (with sidebar)</a></li>
+                                    <li><a href="gallery-album.html">Single Gallery</a></li>
+                                    <li><a href="gallery-album-2.html">Single Gallery (with sidebar)</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="privacy.html">Privacy Policy</a></li>
+                                    <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                                </ul>*@
+                        </li><!--//dropdown-->
+                        <li class="@active4 nav-item"><a href="~/Admin/Users">Uzivatelia</a></li> 
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </div><!--//container-->
+        </nav><!--//main-nav-->
+        <!-- ******CONTENT****** -->
+
+
+
+        <div class="content container">
+
+
+            @RenderBody()
+
+
+        </div><!--//content-->
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Plugins/bootstrap-hover-dropdown.min.js"></script>
+    <script src="~/Plugins/back-to-top.js"></script>
+    <script src="~/Plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="~/Plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
+    <script src="~/Plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script src="~/Plugins/jflickrfeed/jflickrfeed.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="~/Plugins/gmaps/gmaps.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    <script src="~/Addons/bootstrap-datepicker-master/dist/js/bootstrap-datepicker.min.js"></script>
+
+
+
+    <script type="text/javascript">
+    function fixPopover() {
+    $('html').on('click.popover', function (e) {
+    var allpopins = $('.popover.in');
+    if (allpopins.has(e.target).length > 0 &&
+    !$('.btn', allpopins).is(e.target))
+    return;
+    var id = $(e.target).attr('aria-describedby');
+    var popin = $("#" + id);
+    allpopins.not(popin).popover('hide');
+    });
+    //
+    $('.dropdown-menu').click(function (e) {
+    e.stopPropagation();
+    });
+    //
+    $('[data-toggle="tooltip"]').tooltip({ html: true, animation: false });
+    }
+
+
+    function processAction() {
+    // var btn = $('<span rel="popover-delete" id="' + idbtndeleteall + '" class="btn btn-danger hidden pull-left"><span class="glyphicon glyphicon-trash"></span>Vymaž</span>')
+    // var adp = $('<a rel="popover-delete" onclick=""><span class="glyphicon glyphicon-trash text-danger" aria-hidden="true"></span><span class="text-danger"> ' + Resources.Labels.Delete + '</span></a>');
+    this._btnYes = $('<span style="margin:0 2px" class="btn btn-danger btn-sm">Áno</span>');
+    this._btnNo = $('<span style="margin:0 2px" class="btn  btn-sm btn-primary" onclick="$(\'a[rel=popover-delete]\').popover(\'hide\');">Nie</span>');
+    var context = this;
+
+    this.process = function (placement) {
+        if (!placement)
+            placement = 'left';
+
+    $('a[rel="popover-delete"]').each(function () {
+    //popover buttons
+        var adp = $(this);
+        var href = adp.attr('actionlink');
+        console.log(adp);
+        var btnYes = context._btnYes.clone();
+        btnYes.click(function () {        
+            window.location = href ;
+        });
+        var btnNo = context._btnNo.clone();
+        btnNo.click(function () {
+            adp.popover('hide');
+        });
+        var btnyesno = $('<div class="text-center">');
+            btnyesno.append(btnYes);
+            btnyesno.append(btnNo);
+        adp.popover({
+            trigger: 'manual',
+            title: function () { return "Vymaž"; },
+            content: function () {
+                var cntn = $('<div class="text-center text-primary">' + 'Ste si istý že chcete vymazať túto položku?' + '</div>');
+                cntn.append(btnyesno);
+                return cntn;
+            },
+            placement: placement,
+            html: true
+        });
+    adp.click(function () {     
+        $(this).popover('show');      
+        });
+        });
+    }
+
+
+    fixPopover();
+
+
+        }
+
+
+    </script>
+
+
+
+
+
+
+
+
+        @RenderSection("scripts", required: false)
+</body>
+</html>

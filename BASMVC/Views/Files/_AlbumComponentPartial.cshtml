@@ -1,0 +1,12 @@
+﻿@using BAS.Repository.Model
+@model ICollection<File_t>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <a class="prettyphoto col-md-3 col-sm-3 col-xs-6" rel="prettyPhoto[gallery]" title="@item.Description" href="@item.StandPath">
+        <img class="img-responsive img-thumbnail" src="@item.ThumPath" alt="" />
+    </a>
+}

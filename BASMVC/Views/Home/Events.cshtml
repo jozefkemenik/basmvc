@@ -1,0 +1,73 @@
+﻿@using BAS.Resources;
+@using BASMVC.ViewModel
+@model IndexVM
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Events";
+}
+
+
+<div class="page-wrapper">
+
+    <header class="page-heading clearfix">
+        <h1 class="heading-title pull-left">Pripravujeme</h1>
+        <div class="breadcrumbs pull-right">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-label">Práve ste tu:</li>
+                <li><a href="/home">Domov</a><i class="fa fa-angle-right"></i></li>
+                <li class="current">Pripravujeme</li>
+            </ul>
+        </div><!--//breadcrumbs-->
+    </header> 
+
+
+    <div class="page-content">
+        <div class="row page-row">
+            <div class="events-wrapper col-md-8 col-sm-7">
+
+
+                @foreach (var item in Model.EventVMCollection)
+            {
+
+                    <article class="events-item page-row has-divider clearfix">
+                        <div class="date-label-wrapper col-md-1 col-sm-2">
+                            <p class="date-label">
+                                <span class="month">@item.IssueDateMonthShortText</span>
+                                <span class="date-number">@item.IssueDate.Day</span>
+                            </p>
+                        </div><!--//date-label-wrapper-->
+                        <div class="details col-md-11 col-sm-10">
+                            <h3 class="title">@item.Title</h3>
+                            <p class="meta"><span class="time"><i class="fa fa-clock-o"></i>@item.IssueDateTimeText</span><span class="location"><i class="fa fa-map-marker"></i> @item.Location</span></p>
+                            <blockquote>
+                                <p class="text-justify">@item.Text</p>
+                            </blockquote>
+                        </div><!--//details-->
+                    </article><!--//events-item-->
+                }
+
+
+
+
+            </div><!--//events-wrapper-->
+            <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+
+                <section class="widget has-divider">
+                    <h3 class="title">Čo bolo</h3>
+@foreach (var item in Model.NewVMCollection)
+{
+                    <article class="news-item row">
+                        <figure class="thumb col-md-2">
+                            <img src="@item.FilePath" alt="">
+                        </figure>
+                        <div class="details col-md-10">
+                            <h4 class="title"><a href="~/Home/NewDetail?id=@item.Id">@item.Title</a></h4>
+                        </div>
+                    </article><!--//news-item-->
+}                
+                </section><!--//widget-->
+            </aside>
+        </div><!--//page-row-->
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0738293E-809F-4F66-B484-FB23A6B466F1}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BASMVC", "BASMVC\BASMVC.csproj", "{27402CDB-2B03-44C1-B769-BEB559DD4C7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAS.Resources", "BAS.Resources\BAS.Resources.csproj", "{536D24E5-6CFB-429B-A095-4E43AE117D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REPOSITORY", "BAS.REPOSITORY\REPOSITORY.csproj", "{D3CEEE8C-2798-4041-B600-232FC491500B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAS.Core", "BAS.Core\BAS.Core.csproj", "{D7282DFF-DDBB-4692-8811-D64B52BAE2D2}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DB", "DB\DB.sqlproj", "{3EA9BBB0-BDFB-48C0-B57B-5C682F6458C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27402CDB-2B03-44C1-B769-BEB559DD4C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27402CDB-2B03-44C1-B769-BEB559DD4C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27402CDB-2B03-44C1-B769-BEB559DD4C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27402CDB-2B03-44C1-B769-BEB559DD4C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536D24E5-6CFB-429B-A095-4E43AE117D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536D24E5-6CFB-429B-A095-4E43AE117D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536D24E5-6CFB-429B-A095-4E43AE117D8B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{536D24E5-6CFB-429B-A095-4E43AE117D8B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D3CEEE8C-2798-4041-B600-232FC491500B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3CEEE8C-2798-4041-B600-232FC491500B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3CEEE8C-2798-4041-B600-232FC491500B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3CEEE8C-2798-4041-B600-232FC491500B}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D7282DFF-DDBB-4692-8811-D64B52BAE2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7282DFF-DDBB-4692-8811-D64B52BAE2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7282DFF-DDBB-4692-8811-D64B52BAE2D2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7282DFF-DDBB-4692-8811-D64B52BAE2D2}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{3EA9BBB0-BDFB-48C0-B57B-5C682F6458C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA9BBB0-BDFB-48C0-B57B-5C682F6458C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA9BBB0-BDFB-48C0-B57B-5C682F6458C4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3EA9BBB0-BDFB-48C0-B57B-5C682F6458C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA9BBB0-BDFB-48C0-B57B-5C682F6458C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA9BBB0-BDFB-48C0-B57B-5C682F6458C4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
+		SolutionGuid = {3D784AE1-609B-4898-8977-285E4952D14C}
+	EndGlobalSection
+EndGlobal

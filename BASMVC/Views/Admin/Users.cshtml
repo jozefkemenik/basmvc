@@ -1,0 +1,77 @@
+﻿@using BAS.Repository.Model
+@model ICollection<UserProfile>
+    @{
+        Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    }
+    <h2>Užívatelia</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    <strong>Užívateľské meno</strong>
+                </th>
+                <th>
+                    <strong>Meno Priezvisko</strong>
+                </th>
+           
+                <th style="width:100px">Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (UserProfile item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.UserName
+                    </td>
+                    <td>
+                        @String.Format("{0} {1}",item.FirstName,item.LastName) 
+                    </td>
+                    <td>
+                        <ul>
+                            
+                        @foreach (var role in item.webpages_Roles.Select(r => r.RoleName).ToList())
+                        {
+                            <li>
+                                @role
+                            </li>
+                        }
+                            
+                       </ul>
+</td>
+
+                   
+                    <td>
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Akcia <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Uprav", "ShowNewDetail", "Admin", new { id = @item.UserId }, null)</li>    
+                                <li>@Html.ActionLink("Nastav prava Spravcu", "SetUserToRoleAdmin", "Admin", new { id = @item.UserId }, null)</li>
+                                <li>@Html.ActionLink("Nastav bezne prava", "SetUserToRoleUser", "Admin", new { id = @item.UserId }, null)</li>
+                                @if (!item.IsCurrenctUser)
+                                {
+                                    <li role="separator" class="divider"></li>
+                                    <li>@Html.ActionLink("Vymaž", "DeleteUser", "Admin", new { id = @item.UserId }, null)</li>
+
+                                }
+                               
+                            </ul>
+                        </div>
+
+                    </td>
+                </tr>
+            }
+
+
+
+        </tbody>
+    </table>
+
+
+
+
+    <script type="text/javascript">
+
+    </script>

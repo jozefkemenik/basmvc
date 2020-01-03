@@ -1,0 +1,214 @@
+﻿@using BAS.Resources;
+@using BASMVC.ViewModel
+@model IndexVM
+<style>
+    .promo {
+        text-align: justify;
+    }
+</style>
+
+
+
+<div id="promo-slider" class="slider flexslider">
+    <ul class="slides">
+        <li>
+            <img src="../../Content/images/slides/banner_piano_u.jpg" alt="" />
+            <p class="flex-caption">
+                <span class="main">Hudobný odbor</span>
+                <br />
+                <span class="secondary clearfix">Ponúkame výučbu pre viac ako 20 hudobných nástrojov</span>
+            </p>
+        </li>
+        <li>
+            <img src="../../Content/images/slides/banner_art_u.jpg" alt="" />
+            <p class="flex-caption">
+                <span class="main">Literárno-dramatický odbor</span>
+                <br />
+                <span class="secondary clearfix">Učíme vystupovanie na verejnosti s pohotovým a zrozumiteľným vyjadrovaním</span>
+            </p>
+        </li>
+        <li>
+            <img src="../../Content/images/slides/banner_dance_u.jpg" alt="" />
+            <p class="flex-caption">
+                <span class="main">Tanečný odbor</span>
+                <br />
+                <span class="secondary clearfix">Výučba klasického, ľudového, moderného tanca</span>
+            </p>
+        </li>
+        <li>
+            <img src="../../Content/images/slides/banner_color_u.jpg" alt="" />
+            <p class="flex-caption">
+                <span class="main">Výtvarný odbor</span>
+                <br />
+                <span class="secondary clearfix">Vysoká úspešnosť na domácich a zahraničných súťažiach</span>
+            </p>
+        </li>
+    </ul><!--//slides-->
+</div><!--//flexslider-->
+
+
+
+<section class="promo box box-dark">
+    <div class="col-md-9">
+        <h1 class="section-heading">@Resource.textWhyWe</h1>
+        <p>@Resource.textWhyWeDetail</p>
+    </div>
+    <div class="col-md-3">
+        <a href="#" class="btn btn-cta"><i class="fa fa-play-circle"></i>@Resource.textApplyNow</a>
+    </div>
+
+</section>
+
+
+
+
+<section class="news">
+    <h1 class="section-heading text-highlight"><span class="line">Najnovšie správy</span></h1>
+    <div class="carousel-controls">
+        <a class="prev" href="#news-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+        <a class="next" href="#news-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+    </div><!--//carousel-controls-->
+    <div class="section-content clearfix">
+        <div id="news-carousel" class="news-carousel carousel slide">
+            <div class="carousel-inner">
+
+
+                @for (int i = 0; i < 3; i++)
+                {
+
+                    if (i == 0)
+                    {
+                        @:<div class='item active'>
+                        }
+                    else
+                    {
+                        @:<div class='item'>
+                        }
+                    foreach (var item in Model.NewVMCollection.Skip(i * 3).Take(3))
+                    {
+                        <div class="col-md-4 news-item">
+                            <h2 class="title"><a href="news-single.html">@item.Title</a></h2>
+                            <img class="thumb" src="@item.FilePath" alt="" />
+                            <h6>
+                                <i class="fa fa-calendar-o"></i> @item.IssueDateText
+                                <i class="fa fa-clock-o"></i> @item.IssueDateTimeText
+                            </h6>
+                            <h6 class="location"><i class="fa fa-map-marker"></i> @item.Location</h6>
+                            <a class="read-more" href="~/Home/NewDetail?id=@item.Id">Pozri viac<i class="fa fa-chevron-right"></i></a>
+                        </div><!--//news-item-->
+                    }
+                    @:</div>
+                }
+
+            </div><!--//news-carousel-->
+        </div><!--//section-content-->
+</section><!--//news-->
+<div class="row cols-wrapper">
+    <div class="col-md-3">
+        <section class="events">
+            <h1 class="section-heading text-highlight"><span class="line">Pripravujeme</span></h1>
+            <div class="section-content">
+
+                @foreach (var item in Model.EventVMCollection)
+                {
+                    <div class="event-item">
+                        <p class="date-label">
+                            <span class="month">@item.IssueDateMonthShortText</span>
+                            <span class="date-number">@item.IssueDate.Day</span>
+                        </p>
+                        <div class="details">
+                            <h2 class="title">@item.Title</h2>
+                            <p class="time"><i class="fa fa-clock-o"></i>@item.IssueDateTimeText</p>
+                            <p class="location"><i class="fa fa-map-marker"></i>@item.Location</p>
+                        </div><!--//details-->
+                    </div><!--event-item-->
+                }
+                <a class="read-more" href="/Home/Events">Všetko čo pripravujeme<i class="fa fa-chevron-right"></i></a>
+            </div><!--//section-content-->
+        </section><!--//events-->
+    </div><!--//col-md-3-->
+    <div class="col-md-9">
+
+        <section>
+            <h1 class="section-heading text-highlight"><span class="line">O nás</span></h1>
+
+            <div class="section-content">
+
+                <div class="row">
+                    <div class="col-md-7">
+                        <p class="featured-image page-row"><img alt="" src="~/Images/ymca.gif" style="margin-left: auto;margin-right: auto;" class="img-responsive"></p>
+                        <br />
+                        <div class="page-row box box-border">
+                            <p>Zriaďovateľ Súkromnej základnej umeleckej školy,<br />Novohradská 2, 984 01 Lučenec:</p>
+                            <ul class="list-unstyled no-margin-bottom">
+                                <li style="margin-left: 40px"><b>Základná umelecká škol n.o.</b></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="page-row box box-border">
+                            Štatutárny zástupca zriaďovateľa:
+                            <ul class="list-unstyled no-margin-bottom">
+                                <li style="margin-left: 40px">
+                                    <ul>
+                                        <li><strong>Mgr. Jana Kemeníková DiS.art</strong></li>
+                                    </ul>
+                            </ul>
+                        </div>
+                        <br />
+                        <div class="page-row box box-border">
+                            Správna rada:
+                            <ul class="list-unstyled no-margin-bottom">
+                                <li style="margin-left: 40px">
+                                    predseda:
+                                    <ul>
+                                        <li><strong>Tomáš Demecs DiS.art</strong></li>
+                                    </ul>
+                                <li style="margin-left: 40px">
+                                    členovia:
+                                    <ul>
+                                        <li><strong>Ing. Martin Bielik</strong></li>
+                                        <li><strong>Kornélia Poprádiová</strong></li>
+                                    </ul>
+                            </ul>
+                        </div>
+                        <br />
+                        <div class="page-row box box-border">
+                            Dozorná rada:
+                            <ul class="list-unstyled no-margin-bottom">
+                                <li style="margin-left: 40px">
+                                    predseda:
+                                    <ul>
+                                        <li><strong>Mgr. Peter Csúsz</strong></li>
+                                    </ul>
+                                </li>
+                                <li style="margin-left: 40px">
+                                    členovia:
+                                    <ul>
+                                        <li><strong>Mgr. Pavol Baculík</strong></li>
+                                        <li><strong>Ing. Bronislav Hámorník</strong></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--//section-content-->
+            </div>
+        </section><!--//video-->
+    </div>
+
+</div><!--//cols-wrapper-->
+
+
+
+
+
+
+
+
+
+@section Scripts{
+  
+}

@@ -1,0 +1,159 @@
+﻿@using BAS.Resources;
+@using BASMVC.ViewModel
+@model MessageVM
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">Kontak</h1>
+            <div class="breadcrumbs pull-right">
+                <ul class="breadcrumbs-list">
+                    <li class="breadcrumbs-label">Práve ste tu:</li>
+                    <li><a href="/home">Domov</a><i class="fa fa-angle-right"></i></li>
+                    <li class="current">Kontakt</li>
+                </ul>
+            </div><!--//breadcrumbs-->
+        </header>
+        <div class="page-content">
+            <div class="row">
+                <article class="contact-form col-md-8 col-sm-7  page-row">
+                    <h3 class="title">Pošli nám správu</h3>
+                    <p>V prípade akýchkoľvek otázok nám prosím pošlite správu vyplnením údajov vo formulári nižšie</p>
+                    <form id="message-form">
+                        <div class="form-group name">
+                            <label for="name">Meno</label>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Napíšte svoje meno" })
+                                @Html.ValidationMessageFor(m => m.Name)
+                   
+                        </div><!--//form-group-->
+                        <div class="form-group email">
+                            <label for="email">Email<span class="required">*</span></label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Napíšte svoj email" })
+                            @Html.ValidationMessageFor(m => m.Email)                     
+                        </div><!--//form-group-->
+                        <div class="form-group phone">
+                            <label for="phone">Telefón</label>
+                            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "Napíšte svoj telefon" })
+                            @Html.ValidationMessageFor(m => m.Phone)                            
+                        </div><!--//form-group-->
+                        <div class="form-group message">
+                            <label for="message">Správa<span class="required">*</span></label>
+                            @Html.TextAreaFor(m => m.Message, 6, 1, new { @class = "form-control", placeholder = "Napíšte správu" })
+                            @Html.ValidationMessageFor(m => m.Message)
+                        </div><!--//form-group-->
+                        <button type="button" class="btn btn-theme" onclick="sendEmail();">Odošli správu</button>
+                    </form>
+                </article><!--//contact-form-->
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                 
+
+                    <section class="widget has-divider">
+                        <h3 class="title">Poštová adresa</h3>
+                        <p class="adr">
+                            <span class="adr-group">
+                                <span class="street-address">Základná umelecká škola</span><br>
+                                <span class="region">Novohradská 2</span><br>
+                                <span class="postal-code">984 01 Lučenec</span><br>
+                                <span class="country-name">Slovakia</span>
+                            </span>
+                        </p>
+                    </section><!--//widget-->
+
+                    <section class="widget">
+                        <h3 class="title">Kontakt na vedenie</h3>
+                        <p class="tel"><i class="fa fa-phone"></i>Tel: +421 903 720 744</p>
+                        <p class="email"><i class="fa fa-envelope"></i>Email: <a href="#">kemenikova@gmail.com</a></p>
+                    </section>
+                </aside><!--//page-sidebar-->
+            </div><!--//page-row-->
+            <div class="page-row">
+                <article class="map-section">
+                    <h3 class="title">Ako nás najdete</h3>
+                    <div id="map"></div><!--//map-->
+                </article><!--//map-->
+            </div><!--//page-row-->
+        </div><!--//page-content-->
+    </div><!--//page-wrapper-->
+
+
+
+<div class="modal fade" id="message-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Status</h4>
+            </div>
+            <div class="modal-body text-center alert-danger">
+                <h3 class="text-modal-body"></h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success text-center" style="margin:0 auto" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+
+
+        jQuery.fn.extend({
+            serializeCustom: function () {
+                return this.find('input[name],select[name],textarea[name]').serialize();
+            },
+
+            serializeArrayCustom: function () {
+                return this.find('input,select,textarea').serializeArray();
+            }
+        });
+
+function sendEmail(){
+    var form = $("#message-form");
+    var isValid = form.validate().form();
+    if (!isValid)
+        return;
+
+    var obj = {
+        Name: $('input[name = Name]', form).val(),
+        Email: $('input[name = Email]', form).val(),
+        Message: $('textarea[name = Message]', form).val(),
+        Phone: $('input[name = Phone]', form).val(),
+    }
+    var data = JSON.stringify({ vm: obj })
+    
+    $.ajax({
+        type: "POST",
+        url: "/AboutUs/Contact",
+        data: data ,
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        success: function (data) {
+            if (data)
+            {
+               
+               
+                if (data.wasSent) {
+                    $('.text-modal-body').text('Váša správa bola odoslaná');
+                }
+                else
+                {
+                    $('.text-modal-body').text('Váša správa nebola odoslaná, došlo k neočakávanej chybe');
+                }
+                $('#message-modal').modal('show');
+            }
+           
+        },
+        failure: function (errMsg) {
+            $('.text-modal-body').text('Váša správa nebola odoslaná, došlo k neočakávanej chybe');
+            $('#message-modal').modal('show');
+        }
+    });
+}
+</script>}

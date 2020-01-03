@@ -1,0 +1,16 @@
+﻿@using BAS.Repository.Model
+@model Album_t
+@{
+    Layout = null;
+
+}
+
+<ul class="media-list">
+   @foreach (var photo in Model.File_t)
+    {
+        <li class="thumbnailContainer well media" >
+            @Html.Partial("_ContentContainerPartial", photo)
+        </li>
+    }
+</ul>
+

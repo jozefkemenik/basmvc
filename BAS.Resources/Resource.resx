@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUs" xml:space="preserve">
+    <value>O Nás</value>
+  </data>
+  <data name="AboutUsDetailPartialText" xml:space="preserve">
+    <value>Naša škola sa pýši titulom najväčšej plnoorganizovanej základnej umeleckej školy na juhu Banskobystrického kraja, ktorá  metodicky koordinuje školy svojho druhu regiónov: Novohrad, Gemer a Malohont. Je centrom umeleckého vzdelávania v meste Lučenec ...</value>
+  </data>
+  <data name="AboutUsDetailText" xml:space="preserve">
+    <value>Naša škola sa pýši titulom najväčšej plnoorganizovanej základnej umeleckej školy na juhu Banskobystrického kraja, ktorá  metodicky koordinuje školy svojho druhu regiónov: Novohrad, Gemer a Malohont.  Pôsobí ako centrum umeleckého vzdelávania v meste Lučenec. Získava významné ocenenia  na domácich  a medzinárodných súťažiach. Úzko spolupracuje so zahraničnými  umeleckými školami EU  a  v rámci  medzinárodných kontaktov úspešne reprezentuje slovenské umenie  na koncertných turné a výtvarných výstavách. Jej cieľom je poskytovať umelecké vzdelanie pre všetky vrstvy obyvateľstva  formou   rozvíjania  umeleckých schopností  , umeleckých zručností  pri vytváraní a chápaní umeleckého diela.   Škola dala základy umeleckého vzdelania mnohým výkonným umelcom, ktorí reprezentujú našu vlasť doma a v zahraničí.</value>
+  </data>
+  <data name="AttemptText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Novinky</value>
+  </data>
+  <data name="btnLearnMore" xml:space="preserve">
+    <value>Zisti viac</value>
+  </data>
+  <data name="btnMore" xml:space="preserve">
+    <value>Viac</value>
+  </data>
+  <data name="btnSendText" xml:space="preserve">
+    <value>Odošli</value>
+  </data>
+  <data name="BuildingContentText" xml:space="preserve">
+    <value>&lt;p&gt;Zriaďovateľ   Súkromnej základnej umeleckej školy, Novohradská 2, 984 01 Lučenec :&lt;/p&gt;
+                &lt;p style="margin-left: 40px"&gt;&lt;b&gt;Základná umelecká škola n.o.&lt;/b&gt;&lt;/p&gt;
+            &lt;p&gt;Štatutárny zástupca zriaďovateľa: &lt;b&gt;Mgr. Jana Kemeníková&lt;/b&gt;&lt;/p&gt;
+            &lt;p&gt;Správna rada:&lt;ul style="margin-left: 40px"&gt;&lt;li&gt;predseda: &lt;b&gt;Tomáš Demecs&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;členovia: &lt;b&gt;Ing. Martin Bielik, Kornélia Poprádiová&lt;/b&gt;&lt;/li&gt;                                                 
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;Dozorná rada:&lt;ul style="margin-left: 40px"&gt;&lt;li&gt;predseda: &lt;b&gt;Mgr. Peter Csúsz&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;členovia: &lt;b&gt;Mgr.
+Pavol Baculík, Mgr. Štefan Csák&lt;/b&gt;&lt;/li&gt;                                                 
+&lt;/ul&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="BuildingHeaderText" xml:space="preserve">
+    <value>Zriaďovateľ  školy</value>
+  </data>
+  <data name="BuildingText" xml:space="preserve">
+    <value>Sídlo školy</value>
+  </data>
+  <data name="ContactFormText" xml:space="preserve">
+    <value>Kontaktný formulár</value>
+  </data>
+  <data name="ContactToUsText" xml:space="preserve">
+    <value>Kontakt na školu</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="CountText" xml:space="preserve">
+    <value>Počet zobrazení: </value>
+  </data>
+  <data name="CVKemenikText" xml:space="preserve">
+    <value>&lt;p&gt;Vzdelanie:
+&lt;ul style="margin-left: 40px"&gt;
+&lt;li&gt;1967 – 1973 – Konzervatórium BratislavaAbsolutórium verejným koncertom z tvorby F. Chopina v  Koncertnej sieni Grasalkovicovho paláca v Bratislave&lt;/li&gt;
+&lt;li&gt;1996 – 2000 Univerzita Mateja Bela, Banská Bystrica  Fakulta humanitných vied – odbor hudobná pedagogika&lt;/li&gt;
+&lt;li&gt;2002 – absolvovanie I. kvalifikacnej skúšky – Metodické centrum Banská Bystrica.&lt;/li&gt;
+&lt;li&gt;2012 - ukoncenie funkcného inovacného vzdelávania – Metodické centrum Banská Bystrica.&lt;/li&gt;
+&lt;/p&gt;</value>
+  </data>
+  <data name="DirectorateText" xml:space="preserve">
+    <value>Riaditeľstvo</value>
+  </data>
+  <data name="EmailText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="FaxText" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Galéria</value>
+  </data>
+  <data name="HeaderTextDancing" xml:space="preserve">
+    <value>Tanečný odbor rozvíja fyzické a psychické dispozície formou klasického, kreatívneho
+a ľudového tanca. Umožňuje vniknúť do oblasti pohybu, rytmického a melodického cítenia,
+tempa, dynamiky a taktu. Sústredenosť, precíznosť a disciplína pohybu prináša estetické
+výsledky, ktoré sú zamerané na umeleckú fantáziu, prirodzenosť rozvíjania tanečného pohybu
+a umeleckú tvorivosť.</value>
+  </data>
+  <data name="HeaderTextLiterary" xml:space="preserve">
+    <value>Literárno - dramatický odbor sa vyznačuje tvorivou dramatikou osvojením si
+dramatických schopností, zručností, a psychofyziologických funkcií. Rozvíja predstavivosť,
+fantáziu v improvizáciách a v štrukturovanej dramatickej hre.
+LDO zabezepečuje komunikačné schopnosti /verbálne, neverbálne, pohybové/. Dramatická
+výchova prináša hodnoty prejavujúce sa v celkovej osobnosti človeka.</value>
+  </data>
+  <data name="HeaderTextMusic" xml:space="preserve">
+    <value>Hudobný odbor umožňuje rozvíjať osobnosť, citové zrenie, kultivovanosť
+a formovanie charakteru. Vytvára priestor na interpretačné činnosti, ktoré pomocou
+umeleckých vedomostí, vlastných predstáv, fantázie a umeleckých zručností pretvára do
+vlastnej podoby.
+Interpreti vyjadrujú v hudobných dielach svoje pocity a stupeň umeleckého
+vyjadrovania. Vnikajú do podstaty umenia a poznávajú krásu prostredníctvom umeleckej
+tvorivosti.</value>
+  </data>
+  <data name="HeaderTextPainting" xml:space="preserve">
+    <value>Výtvarný odbor integruje oblasť citovej a rozumovej výchovy. V harmonickom
+vzťahu sa aktivujú všetky zložky osobnosti. Najvyšším cieľom je výchova ku kreativite.
+Ťažiskom je individuálny prístup smerovaný k vytváraniu vlastných predstáv, ktoré vyúsťujú
+formou zážitkového tvorivého poznávania k vlastnej umeleckej výtvarnej tvorbe.</value>
+  </data>
+  <data name="HeaderTitleDancing" xml:space="preserve">
+    <value>Tanečný odbor</value>
+  </data>
+  <data name="HeaderTitleLiterary" xml:space="preserve">
+    <value>Literárno-dramatický odbor</value>
+  </data>
+  <data name="HeaderTitleMusic" xml:space="preserve">
+    <value>Hudobný odbor</value>
+  </data>
+  <data name="HeaderTitlePainting" xml:space="preserve">
+    <value>Výtvarný odbor</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Domov</value>
+  </data>
+  <data name="HomePageText" xml:space="preserve">
+    <value>Úvodná Stránka</value>
+  </data>
+  <data name="IsRequiredText" xml:space="preserve">
+    <value>Údaj je povinný</value>
+  </data>
+  <data name="LengthText" xml:space="preserve">
+    <value>Text má byť dĺžky {2} až {1} znakov</value>
+  </data>
+  <data name="LogoHeader" xml:space="preserve">
+    <value>Novohradská 2, 98401 Lučenec</value>
+  </data>
+  <data name="LogoHeaderTitle" xml:space="preserve">
+    <value>Súkromná základná umelecká škola</value>
+  </data>
+  <data name="MessageText" xml:space="preserve">
+    <value>Správa</value>
+  </data>
+  <data name="ourLocationText" xml:space="preserve">
+    <value>Naša Poloha</value>
+  </data>
+  <data name="PhoneText" xml:space="preserve">
+    <value>Telefón</value>
+  </data>
+  <data name="PosterText" xml:space="preserve">
+    <value>Plagát</value>
+  </data>
+  <data name="RequiredText" xml:space="preserve">
+    <value>Povinný údaj</value>
+  </data>
+  <data name="SubjectText" xml:space="preserve">
+    <value>Subjekt</value>
+  </data>
+  <data name="TextUserName" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="TitleDirector" xml:space="preserve">
+    <value>Riadiťeľka školy:</value>
+  </data>
+  <data name="TitleUnderDirector" xml:space="preserve">
+    <value>Zástupkyňa školy:</value>
+  </data>
+  <data name="VisitUsText" xml:space="preserve">
+    <value>Navštívte nás</value>
+  </data>
+  <data name="WebPageText" xml:space="preserve">
+    <value>Stránka</value>
+  </data>
+  <data name="WrongEmailFormatText" xml:space="preserve">
+    <value>Zlý formát</value>
+  </data>
+  <data name="textApplyNow" xml:space="preserve">
+    <value>Prihlás sa teraz</value>
+  </data>
+  <data name="textBtnMore" xml:space="preserve">
+    <value>Zisti viac</value>
+  </data>
+  <data name="textLatestNew" xml:space="preserve">
+    <value>Posledné udalosti</value>
+  </data>
+  <data name="textNextEvents" xml:space="preserve">
+    <value>Nadchádzajúce udalosti</value>
+  </data>
+  <data name="textWhyWe" xml:space="preserve">
+    <value>Prečo práve my</value>
+  </data>
+  <data name="textWhyWeDetail" xml:space="preserve">
+    <value>Máme významné úspechy na medzinárodných a domácich súťažiach a sme najvačšou  plnoorganizovanou  ZUŠ regiónov Novohrad Gemer a Malohont , kde sa žiaci vzdelávajú v hudobnom, výtvarnom, tanečnom a literárno - dramatickom odbore. Na škole posobia profesionálni umeleckí pedagógovia.  Úzko spolupracujeme  s umeleckými školami na Slovensku ( Konzervatórium  Bratislava ) a umeleckými školami Európskej únie ( Francúzsko, Maďarsko , Česká Republika atď) formou vzájomných koncertnych turné , výstavami výtvarných prác a výmenou profesionálnych pedagogickych skúseností.</value>
+  </data>
+</root>

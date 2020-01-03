@@ -1,0 +1,71 @@
+﻿@using BAS.Repository.Model
+@model ICollection<Event_t>
+    @{
+        Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    }
+    <h2>Udalosti (čo bude)</h2>
+    <a class="btn btn-success" type="button" href="~/Admin/EventDetail">+ Pridaj udalosť</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width:100px">
+                    <strong>Dátum</strong>
+                </th>
+                <th style="width:100px">
+                    <strong>Vytvorené</strong>
+                </th>
+                <th style="width:100px">
+                    <strong>Miesto</strong>
+                </th>
+                <th>
+                    <strong>Názov</strong>
+                </th>
+
+                <th style="width:100px"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Event_t item in Model)
+            {
+                <tr>
+                    <td>
+                        @String.Format("{0:00}. {1:00}. {2} ", item.IssueDate.Day, item.IssueDate.Month, item.IssueDate.Year)
+                    </td>
+                    <td>
+                        @String.Format("{0:00}. {1:00}. {2} ", item.CreatedDate.Day, item.CreatedDate.Month, item.CreatedDate.Year)
+                    </td>
+                    <td>
+                        @item.Location
+                    </td>
+
+                    <td>
+                        @item.Title
+                    </td>
+
+                   
+                    <td>
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Akcia <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Uprav", "ShowEventDetail", "Admin", new { id = @item.Id }, null)</li>
+                                <li role="separator" class="divider"></li>
+                                <li><a rel="popover-delete" actionlink="/Admin/DeleteEvent?id=@item.Id">Vymaž</a></li>
+                            </ul>
+                        </div>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+                      @section Scripts{
+
+                          <script type="text/javascript">
+                              var pa = new processAction();
+                              pa.process();
+
+                          </script>
+                      }

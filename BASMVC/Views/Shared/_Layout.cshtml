@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+
+        <meta charset="utf-8" />
+        <title>ZUS n.o.</title>
+        <meta name="google-site-verification" content="k-PIiRjzYjh2KlPBcG-VQGxgGHOUI0k5oLKuVXxaD_o" />
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="-1">
+        <meta name="robots" content="index,follow" />
+        <meta name="description" content="Sukromna umelecka skola Lucenec" />
+        <meta name="keywords" content="Sukromna umelecka skola Lucenec,
+				   Zakladna umelecka skola Lucenec,
+				   ZUS Lucenec,
+				   ZUS,
+                                   BestArtSchool,
+                                   skola,
+                                   lucenec,
+                                   music,
+                                   school,
+                                   Novohradska 2,
+                                   sukromna skola,
+                                   Hudobna skola lucenec,
+                                   sukromna skola
+
+				   " />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>   
+        <meta name="viewport" content="width=device-width" />
+        @*@Styles.Render("~/Content/css")*@
+        
+
+        @*@Scripts.Render("~/bundles/modernizr")*@
+        <link href="~/Plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/Plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/Plugins/flexslider/flexslider.css" rel="stylesheet" />
+        <link href="~/Plugins/pretty-photo/css/prettyPhoto.css" rel="stylesheet" />
+       
+        @*<link href="~/Content/css/styles-red.css" rel="stylesheet" />*@
+        <link href="~/Content/css/styles-red.css" rel="stylesheet" />
+        <style>
+
+            .username {
+         
+           font-weight: bold;
+            }
+
+            .header .menu-top li {
+
+                 font-size: 13px;
+                 color: #777777;
+            }
+
+        </style>
+
+
+    </head>
+
+@{string active0 = "", active1 = "", active2 = "", active3 = "", active4 = "", active5 = "";
+    if (ViewBag.ActiveIndex != null)
+    {
+
+        switch ((int)ViewBag.ActiveIndex)
+        {
+            case 0:
+                active0 = "active";
+                break;
+            case 1:
+                active1 = "active";
+                break;
+            case 2:
+                active2 = "active";
+                break;
+            case 3:
+                active3 = "active";
+                break;
+            case 4:
+                active4 = "active";
+                break;
+            case 5:
+                active5 = "active";
+                break;
+        }
+    }
+}
+
+<body class="home-page">
+    <div class="wrapper">
+        <!-- ******HEADER****** -->
+        <header class="header">
+            <div class="top-bar">
+                <div class="container">
+                    <ul class="social-icons col-md-6 col-sm-6 col-xs-12 hidden-xs">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="row-end"><a href="#"><i class="fa fa-rss"></i></a></li>
+                    </ul><!--//social-icons-->
+                    <form class="pull-right search-form" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Hľadaj na stránke...">
+                        </div>
+                        <button type="submit" class="btn btn-theme">Hľadaj</button>
+                    </form>
+                </div>
+            </div><!--//to-bar-->
+            <div class="header-main container">
+                <h1 class="logo col-md-4 col-sm-4">
+                    <a href="index.html"><img id="logo" src="/Content/images/logo.png" alt="Logo"></a>
+                </h1><!--//logo-->
+                <div class="info col-md-8 col-sm-8">
+                    <ul class="menu-top navbar-right hidden-xs">
+                        @Html.Partial("_LoginPartial")
+                        <li class="divider"><a href="~/Home">Domov</a></li>
+                        <li class="divider"><a onclick="$('.modal-donate-us').modal('show')">Podporte nás</a></li>
+
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li class="divider"><a href="~/Home/Contact">Kontakt</a></li>
+                            <li><a href="~/Admin">Uprav stranku</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="~/AboutUs/Contact">Kontakt</a></li>
+                        }
+
+
+                    </ul><!--//menu-top-->
+                    <br />
+                    <div class="contact pull-right">
+                        <p class="phone"><i class="fa fa-phone"></i>Zavolajte nám ešte dnes: +421 903 720 744</p>
+                        <p class="email"><i class="fa fa-envelope"></i><a href="#">kemenikova@gmail.com</a></p>
+                    </div><!--//contact-->
+                </div><!--//info-->
+            </div><!--//header-main-->
+        </header><!--//header-->
+        <!-- ******NAV****** -->
+        <nav class="main-nav" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class='@active0 nav-item'><a href="~/Home">Domov </a></li>
+                        <li class="@active1 nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Odbory <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Course/Music">Hudobný</a></li>
+                                <li><a href="/Course/Brush">Výtvarný</a></li>
+                                <li><a href="/Course/Dance">Tanečný</a></li>
+                                <li><a href="/Course/Art">Literárno-dramatický</a></li>
+                                <li><a href="/Course/Fees">Poplatky</a></li>
+                            </ul>
+                        </li>
+                        <li class="@active2 nav-item"><a href="/Home/Events">Pripravujeme</a></li>
+                        <li class="@active3 nav-item dropdown"><a href="/Home/News">Čo Bolo</a>                           </li>                        
+                        <li class="@active4 nav-item">
+                            <a href="/Home/Gallery">Galéria</a>
+                            @*<ul class="dropdown-menu">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="team.html">Leadership Team</a></li>
+                                <li><a href="jobs.html">Jobs</a></li>
+                                <li><a href="job-single.html">Single Job</a></li>
+                                <li><a href="gallery.html">Gallery (3 columns)</a></li>
+                                <li><a href="gallery-2.html">Gallery (4 columns)</a></li>
+                                <li><a href="gallery-3.html">Gallery (2 columns)</a></li>
+                                <li><a href="gallery-4.html">Gallery (with sidebar)</a></li>
+                                <li><a href="gallery-album.html">Single Gallery</a></li>
+                                <li><a href="gallery-album-2.html">Single Gallery (with sidebar)</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                                <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                            </ul>*@
+                        </li><!--//dropdown-->            
+                        <li class="@active5 nav-item">                       
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">O Nás <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/AboutUs/History">História</a></li>
+                                <li><a href="/AboutUs/Office">Vedenie</a></li>
+                                <li><a href="/AboutUs/Teachers">Učitelia</a></li>
+                                <li><a href="/AboutUs/Contact">Kontakt</a></li>
+                                @*<li><a href="@Url.Action("GetFile","Home", new { id=1 })">Výberove konanie</a></li>*@
+                            </ul>
+                       </li>
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </div><!--//container-->
+        </nav><!--//main-nav-->
+        <!-- ******CONTENT****** -->
+
+
+       
+        <div class="content container">
+  
+
+            @RenderBody()
+
+        
+        </div><!--//content-->
+    </div>
+
+ 
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-3 col-sm-4 about">
+                        <div class="footer-col-inner">
+                            <h3>Informácie</h3>
+                            <ul>
+                                <li><a href="about.html"><i class="fa fa-caret-right"></i>O nás</a></li>
+                             
+                            </ul>
+                        </div><!--//footer-col-inner-->
+                    </div><!--//foooter-col-->
+                    <div class="footer-col col-md-6 col-sm-8 newsletter">
+                        <div class="footer-col-inner">
+                            <h3>Zbierajte informácie</h3>
+                            <p>Zadaním emailovej adresy budete dostávať aktuálne informácie o akciách našej školy</p>
+                            <form class="subscribe-form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Vložte Váš email" />
+                                </div>
+                                <input class="btn btn-theme btn-subscribe" type="submit" value="Registruj">
+                            </form>
+
+                        </div><!--//footer-col-inner-->
+                    </div><!--//foooter-col-->
+                    <div class="footer-col col-md-3 col-sm-12 contact">
+                        <div class="footer-col-inner">
+                            <h3>Kontaktujte nás</h3>
+                            <div class="row">
+                                <p class="adr clearfix col-md-12 col-sm-4">
+                                    <i class="fa fa-map-marker pull-left"></i>
+                                    <span class="adr-group pull-left">
+                                        <span>Základná umelecká škola</span><br>
+                                        <span class="street-address">Novohradská 2</span><br>
+                                        <span class="postal-code">984 01</span> <span class="region">Lučenec</span><br>
+                                        <span class="country-name">Slovakia</span>
+                                    </span>
+                                </p>
+                                <p class="tel col-md-12 col-sm-4"><i class="fa fa-phone"></i>+421 903 720 744</p>
+                                <p class="email col-md-12 col-sm-4"><i class="fa fa-envelope"></i><a href="#">kemenikova@gmail.com</a></p>
+                            </div>
+                        </div><!--//footer-col-inner-->
+                    </div><!--//foooter-col-->
+                </div>
+            </div>
+        </div><!--//footer-content-->
+        <div class="bottom-bar">
+            <div class="container">
+                <div class="row">
+                    MvcApplication 
+                    <small class="copyright col-md-4 col-sm-12 col-xs-12">Počet navštívení za tento deň:  @BASMVC.MvcApplication.CountVisitors</small>
+                    <small class="copyright col-md-4 col-sm-12 col-xs-12">Copyright  @DateTime.Now.Year | Powered by <a href="http://www.softgen.sk">SOFTGEN s.r.o.</a></small>
+
+                    <ul class="social pull-right col-md-4 col-sm-12 col-xs-12">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                        <li class="row-end"><a href="#"><i class="fa fa-rss"></i></a></li>
+                    </ul><!--//social-->
+                </div><!--//row-->
+            </div><!--//container-->
+        </div><!--//bottom-bar-->
+    </footer>
+
+    <div class="modal modal-donate-us fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                    <img src="~/Images/support_form_2.jpg" style="width:100px" class="pull-left" /><h2 class="modal-title text-center pull-riht">Umenie spája ľudí dobrej vôle</h2>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="modal-title text-center alert alert-danger">Chcem pomáhať  mladým nádejným umelcom</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <img src="~/Images/support_form_1.jpg" class="img-responsive img-rounded" />
+
+                    <h4 class="text-center">
+                        Staň sa aj Ty podporovateľom úspešných mladých umelcov
+                    </h4>
+                    <blockquote class="custom-quote">
+                        <p class="text-justify text-muted">
+                            Základnej umeleckej školy n. o., Novohradská 2, 984  01  Lučenec,
+                            ktorá je najväčšou umeleckou školou južného Slovenska, s dlhoročnou tradíciou a významnými domácimi a zahraničnými úspechmi. Úzka spolupráca s poprednými umeleckými školami na Slovensku / napr. Konzervatórium Bratislava / a v zahraničí / napr. Francúzsko, Česko, Maďarsko atď./ zaručuje kvalitu súčasných trendov v umeleckej oblasti.
+                        </p>
+                        <p class="text-justify text-muted">
+                            Pôsobíme ako centrum umeleckého vzdelávania v meste Lučenec.
+                            <span class="text-danger"> Každé euro môže pomôcť, pretože viete komu pomáhate.</span>
+                        </p>
+
+                        <p class="text-left">Základná umelecká škola n.o. , Novohradská 2, 98401 Lučenec Slovakia</p>
+                        <p class="text-left bg-danger">IBAN: SK2209000000000342994420BIC:  GIBASKBX</pclass="text-right"></p>
+                        <p class="text-right">
+                            <strong>ĎAKUJEME</strong>
+                        </p>
+                    </blockquote>
+
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    <script src="~/Plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Plugins/bootstrap-hover-dropdown.min.js"></script>
+    <script src="~/Plugins/back-to-top.js"></script>
+    <script src="~/Plugins/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="~/Plugins/pretty-photo/js/jquery.prettyPhoto.js"></script>
+    <script src="~/Plugins/flexslider/jquery.flexslider-min.js"></script>
+    <script src="~/Plugins/jflickrfeed/jflickrfeed.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src="~/Plugins/gmaps/gmaps.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    ViewBag.Title = "Gallery";
+}
+
+<h2>Úprava galérie </h2>
+
+<a class="btn btn-success" type="button" href="~/Admin/CreateAlbum">+ Pridaj Album</a>
+<div class="page-wrapper">
+    <header class="page-heading clearfix">
+        <h1 class="heading-title pull-left"><small>Kliknite na obrázok pre detail galérie alebo pridajte novú</small></h1>
+    </header>
+    <div class="page-content">
+
+        <div class="row page-row">
+            @Html.Action("GetAlbums", "Upload")
+        </div><!--//page-row-->
+
+    </div><!--//page-content-->
+</div><!--//page-->
+
+
+
+  
+@section Scripts{
+
+    <script type="text/javascript">
+                              var pa = new processAction();
+                              pa.process('top');
+
+    </script>
+}

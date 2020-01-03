@@ -1,0 +1,25 @@
+﻿@using BAS.Repository.Model
+@model ICollection<Album_t>
+
+
+@{
+    Layout = null;
+}
+
+    @foreach (var item in Model)
+    {
+        var file = item.File_t.FirstOrDefault();
+        if (file == null)
+        {
+            continue;
+        }
+            <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                <div class="album-cover">
+                    <a href="@Url.Action("GetAlbumId", new { albumId = @item.Id })"><img class="img-responsive" src="@file.ThumPath" alt="" /></a>
+                    <div class="desc">
+                        <h4><small><a href="#">@item.Name</a></small></h4>
+                        @*<p>@item.Description</p>*@
+                    </div>
+                </div>
+            </div>
+    }

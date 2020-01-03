@@ -1,0 +1,42 @@
+﻿@using BAS.Repository.Model
+@model ICollection<Album_t>
+
+
+@{
+    Layout = null;
+}
+                      @foreach (var item in Model)
+                      {
+                          var file = item.File_t.FirstOrDefault();
+                          var thumPath = "";
+                          if (file != null)
+                          {
+                              thumPath = file.ThumPath;
+
+                              <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                                  <a class="btn btn-warning pull-left" rel="popover-delete" actionlink="/Upload/RemoveGallery?albumId=@item.Id"><span class="glyphicon glyphicon-trash"></span> Vymaž</a>
+                                  <div class="album-cover">
+                                      <a href="@Url.Action("GetAlbumById", new { id = @item.Id })"><img class="img-responsive" src="@thumPath" alt="" /></a>
+                                      <div class="desc">
+                                          <h4><small><a href="#">@item.Id</a></small></h4>
+
+                                      </div>
+                                  </div>
+                              </div>
+
+                          }
+                          else
+                          {
+                              <div class="col-md-4 col-sm-4 col-xs-12 text-center">                          
+                                      <a class="btn btn-warning pull-left" rel="popover-delete" actionlink="/Upload/RemoveGallery?albumId=@item.Id"><span class="glyphicon glyphicon-trash"></span> Vymaž</a>
+
+                                  <div class="album-cover">
+                                      <a href="@Url.Action("GetAlbumById", new { id = @item.Id })"><div class="btn btn-info"><i class="glyphicon glyphicon-plus"></i> Pridaj fotky</div></a>
+                                      
+                                          <h4><small><a href="#">@item.Id</a></small></h4>            
+                                    
+                                  </div>
+                              </div>
+                          }
+
+                      }

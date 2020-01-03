@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5ffb7c1a4ded4d7e863506d9c201013b" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.C__RefactorLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Album_t" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.AlbumType_t" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Event_t" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.File_t" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Message_t" Width="1.5" PointX="5.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.New_t" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UserProfile" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.webpages_Membership" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.webpages_OAuthMembership" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.webpages_Roles" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_dbo_File_t_dbo_Album_t_Album_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Event_t_File_t" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Event_t_UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_File_t_UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Message_t_ParentId" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Message_t_UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Message_t_UserProfile1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_New_t_UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_UserProfile_UserProfile" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.webpages_UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
